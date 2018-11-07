@@ -1,0 +1,22 @@
+{
+  "name": "limerance",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Artem <Erlementovich@yandex.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/erlementovich/limerance",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".vscode",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "jquery": "^3.3.1"
+  }
+}
