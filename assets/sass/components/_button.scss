@@ -64,12 +64,16 @@
 		}
 
 		&.primary {
-			background-color: _palette(accent);
-			box-shadow: none;
-			color: _palette(bg) !important;
+			background-color: _palette(bg);
+			
+			color: _palette(accent) !important;
 
 			&:hover {
 				background-color: lighten(_palette(accent), 3);
+			}
+
+			&:hover {
+				color: lighten(_palette(bg), 2) !important;
 			}
 
 			&:active {
