@@ -23,14 +23,14 @@ var path = {
         fonts: 'build/fonts/'
     },
     assets: { //Пути откуда брать исходники
-        html: 'assets/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+        html: 'assets/**/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'assets/js/*.js',//В стилях и скриптах нам понадобятся только main файлы
         sass: 'assets/sass/main.scss',
         img: 'assets/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'assets/fonts/**/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        html: 'assets/*.html',
+        html: 'assets/**/*.html',
         js: 'assets/js/**/*.js',
         sass: 'assets/sass/**/*.scss',
         img: 'assets/img/**/*.*',
