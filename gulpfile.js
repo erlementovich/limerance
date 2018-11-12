@@ -53,7 +53,7 @@ gulp.task('html:build', function () {
     gulp.src(path.assets.html) //Выберем файлы по нужному пути
         .pipe(rigger()) //Прогоним через rigger
         .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
-        .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
+        .pipe(reload({ stream: true })); //И перезагрузим наш сервер для обновлений
 });
 
 gulp.task('js:build', function () {
@@ -63,7 +63,7 @@ gulp.task('js:build', function () {
         .pipe(uglify()) //Сожмем наш js
         .pipe(sourcemaps.write()) //Пропишем карты
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); //И перезагрузим сервер
+        .pipe(reload({ stream: true })); //И перезагрузим сервер
 });
 
 gulp.task('sass:build', function () {
@@ -74,22 +74,22 @@ gulp.task('sass:build', function () {
         .pipe(cssmin()) //Сожмем
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
-        .pipe(reload({stream: true}));
+        .pipe(reload({ stream: true }));
 });
 
 gulp.task('image:build', function () {
     gulp.src(path.assets.img) //Выберем наши картинки
         .pipe(imagemin({ //Сожмем их
             progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
+            svgoPlugins: [{ removeViewBox: false }],
             use: [pngquant()],
             interlaced: true
         }))
         .pipe(gulp.dest(path.build.img)) //И бросим в build
-        .pipe(reload({stream: true}));
+        .pipe(reload({ stream: true }));
 });
 
-gulp.task('fonts:build', function() {
+gulp.task('fonts:build', function () {
     gulp.src(path.assets.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
@@ -102,20 +102,20 @@ gulp.task('build', [
     'image:build'
 ]);
 
-gulp.task('watch', function(){
-    watch([path.watch.html], function(event, cb) {
+gulp.task('watch', function () {
+    watch([path.watch.html], function (event, cb) {
         gulp.start('html:build');
     });
-    watch([path.watch.sass], function(event, cb) {
+    watch([path.watch.sass], function (event, cb) {
         gulp.start('sass:build');
     });
-    watch([path.watch.js], function(event, cb) {
+    watch([path.watch.js], function (event, cb) {
         gulp.start('js:build');
     });
-    watch([path.watch.img], function(event, cb) {
+    watch([path.watch.img], function (event, cb) {
         gulp.start('image:build');
     });
-    watch([path.watch.fonts], function(event, cb) {
+    watch([path.watch.fonts], function (event, cb) {
         gulp.start('fonts:build');
     });
 });
