@@ -1,0 +1,14 @@
+{
+  "name": "jquery-css-transform",
+  "homepage": "https://github.com/zachstronaut/jquery-css-transform",
+  "_release": "e79642cb21",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e79642cb21a748808ee8fb8caeaa98597134887a"
+  },
+  "_source": "https://github.com/zachstronaut/jquery-css-transform.git",
+  "_target": "*",
+  "_originalSource": "jquery-css-transform",
+  "_direct": true
+}
