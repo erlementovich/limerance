@@ -12,6 +12,7 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
+    cache = require('gulp-cache'),
     reload = browserSync.reload;
 
 var path = {
@@ -79,12 +80,12 @@ gulp.task('sass:build', function () {
 
 gulp.task('image:build', function () {
     gulp.src(path.assets.img) //Выберем наши картинки
-        .pipe(imagemin({ //Сожмем их
+        .pipe(cache(imagemin({ //Сожмем их
             progressive: true,
             svgoPlugins: [{ removeViewBox: false }],
             use: [pngquant()],
             interlaced: true
-        }))
+        })))
         .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(reload({ stream: true }));
 });
@@ -127,5 +128,10 @@ gulp.task('webserver', function () {
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
+
+
+gulp.task('clear', function (callback) {
+	return cache.clearAll();
+})
 
 gulp.task('default', ['build', 'webserver', 'watch']);
