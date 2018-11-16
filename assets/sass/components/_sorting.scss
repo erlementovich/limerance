@@ -1,10 +1,69 @@
-.sorting li {
-   display: inline !important;
-   border: none !important;
+input[type="radio"] {
+   display:none;
 }
-.sorting span {
-    display: inline !important;
-    padding-right: 5% !important;
-    margin-right: 5% !important;
 
- }
+.sorting{
+   margin: 0 2% 5% 3%;
+}
+.posts label {
+ text-align:center;
+ background:#ffffff;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ color:#222222;
+ padding:0.5%;
+ margin:0.5%;
+ margin-left: 5%;
+ margin-bottom:30px;
+ cursor:pointer;
+}
+
+input[type="radio"][id="newyear"]:checked + label {
+ color:#6666ff;
+}
+input[type="radio"][id="newyear"]:checked ~ .february, input[type="radio"][id="newyear"]:checked ~ .mart {
+ width:0;
+ height:0;
+ padding:0;
+ margin:0;
+ opacity:0;
+}
+input[type="radio"][id="february"]:checked + label {
+ color:#ff4466;
+}
+input[type="radio"][id="february"]:checked ~ .newyear, input[type="radio"][id="february"]:checked ~ .mart {
+ width:0;
+ height:0;
+ padding:0;
+ margin:0;
+ opacity:0;
+}
+input[type="radio"][id="mart"]:checked + label {
+ color:#66dd99;
+}
+input[type="radio"][id="mart"]:checked ~ .newyear, input[type="radio"][id="mart"]:checked ~ .february {
+ width:0;
+ height:0;
+ padding:0;
+ margin:0;
+ opacity:0;
+}
+
+/*.tile {
+ width:23%;
+ height:100px;
+ float:left;
+ transition:all 1s;
+ margin:0.5%;
+ padding:0.5%;
+ 
+}*/
+
+/*.green {
+ background:#66dd99;
+}
+.blue {
+ background:#6666ff;
+}
+.red {
+ background:#ff4466;
+}*/
